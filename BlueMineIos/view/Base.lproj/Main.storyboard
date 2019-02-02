@@ -6,23 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bluemine-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlueMineIos" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Bluemine" leftItemsSupplementBackButton="YES" id="TId-e4-GKi">
-                        <barButtonItem key="backBarButtonItem" title="Bluemine" id="AR3-in-HHk"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white_24dp" id="LV8-Ep-uca"/>
-                        <barButtonItem key="rightBarButtonItem" image="ic_tune_white_24dp" id="Szs-B9-VDv"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1276" y="81"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="T5q-eP-biH">
             <objects>
@@ -41,12 +28,55 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bIj-Tv-dr2"/>
+                        <segue destination="S2X-N2-ac1" kind="relationship" relationship="rootViewController" id="RJg-yh-idI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvH-tj-03Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="82"/>
+            <point key="canvasLocation" x="385" y="498"/>
+        </scene>
+        <!--Bluemine-->
+        <scene sceneID="gMt-Kk-mvX">
+            <objects>
+                <viewController id="S2X-N2-ac1" customClass="IssueListController" customModule="BlueMineIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pv5-TU-zKp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zRq-FB-reK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kff-dC-ZnI" firstAttribute="trailing" secondItem="zRq-FB-reK" secondAttribute="trailing" id="1CN-cW-Ijr"/>
+                            <constraint firstItem="zRq-FB-reK" firstAttribute="top" secondItem="kff-dC-ZnI" secondAttribute="top" id="5Vd-Z6-pIh"/>
+                            <constraint firstItem="kff-dC-ZnI" firstAttribute="bottom" secondItem="zRq-FB-reK" secondAttribute="bottom" id="WwP-CF-JKp"/>
+                            <constraint firstItem="zRq-FB-reK" firstAttribute="leading" secondItem="kff-dC-ZnI" secondAttribute="leading" id="vDR-2M-T8a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kff-dC-ZnI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bluemine" id="aVD-x2-9oF">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_white_24dp" id="ddW-4o-5sr">
+                            <connections>
+                                <action selector="showProjects:" destination="S2X-N2-ac1" id="pqR-u7-gK6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_tune_white_24dp" id="3SJ-14-CZk">
+                            <connections>
+                                <action selector="showSettings:" destination="S2X-N2-ac1" id="3Wn-hE-x1k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="issues" destination="zRq-FB-reK" id="k9a-Sj-qNc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaC-wo-U9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="770.46476761619192"/>
         </scene>
     </scenes>
     <resources>
