@@ -20,9 +20,9 @@ class IssueListController: UIViewController , UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func showProjects(_ sender: Any) {
-        
+        navigationController?.pushViewController(ProjectListController(), animated: true)
     }
-    
+
     @IBAction func showSettings(_ sender: Any) {
         
     }
